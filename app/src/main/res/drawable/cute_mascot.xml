@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="140dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Tail fin -->
+    <path
+        android:fillColor="#7C4DFF"
+        android:fillAlpha="0.85"
+        android:pathData="M78,50 C88,38 96,32 94,50 C96,68 88,62 78,50Z" />
+
+    <!-- Body -->
+    <path
+        android:fillColor="#A78BFA"
+        android:pathData="M18,50 C18,37.8 32.5,28 48,28 C63.5,28 78,37.8 78,50 C78,62.2 63.5,72 48,72 C32.5,72 18,62.2 18,50Z" />
+
+    <!-- Belly highlight -->
+    <path
+        android:fillColor="#DDD6FE"
+        android:pathData="M22,56 C22,48 31,40 44,40 C57,40 64,47 64,54 C64,62 56,68 44,68 C31,68 22,64 22,56Z" />
+
+    <!-- Top fin -->
+    <path
+        android:fillColor="#7C4DFF"
+        android:strokeColor="#6D28D9"
+        android:strokeWidth="1"
+        android:pathData="M38,28 C42,20 52,18 56,28 Z" />
+
+    <!-- Pectoral fin -->
+    <path
+        android:fillColor="#C4B5FD"
+        android:strokeColor="#7C4DFF"
+        android:strokeWidth="0.8"
+        android:pathData="M52,56 C60,60 64,68 56,66 C50,68 46,62 52,56Z" />
+
+    <!-- Scales -->
+    <path
+        android:strokeColor="#7C4DFF"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.4"
+        android:fillColor="#00000000"
+        android:pathData="M36,44 Q40,40 44,44" />
+    <path
+        android:strokeColor="#7C4DFF"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.4"
+        android:fillColor="#00000000"
+        android:pathData="M44,44 Q48,40 52,44" />
+    <path
+        android:strokeColor="#7C4DFF"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.4"
+        android:fillColor="#00000000"
+        android:pathData="M36,52 Q40,48 44,52" />
+    <path
+        android:strokeColor="#7C4DFF"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.4"
+        android:fillColor="#00000000"
+        android:pathData="M44,52 Q48,48 52,52" />
+
+    <!-- Eye white -->
+    <circle
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#C4B5FD"
+        android:strokeWidth="1"
+        android:cx="30"
+        android:cy="44"
+        android:r="9" />
+
+    <!-- Eye iris -->
+    <circle
+        android:fillColor="#7C4DFF"
+        android:cx="30"
+        android:cy="44"
+        android:r="6" />
+
+    <!-- Eye pupil -->
+    <circle
+        android:fillColor="#1E0A3C"
+        android:cx="31"
+        android:cy="43"
+        android:r="3.5" />
+
+    <!-- Eye shine -->
+    <circle
+        android:fillColor="#FFFFFF"
+        android:cx="32"
+        android:cy="41.5"
+        android:r="1.5" />
+
+    <!-- Smile -->
+    <path
+        android:strokeColor="#6D28D9"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M20,52 Q24,58 30,54" />
+
+    <!-- Blush -->
+    <path
+        android:fillColor="#FFBDCE"
+        android:fillAlpha="0.8"
+        android:pathData="M17,52 C17,49.2 19.5,47 22,47 C24.5,47 27,49.2 27,52 C27,54.2 24.5,55.5 22,55.5 C19.5,55.5 17,54.2 17,52Z" />
+
+    <!-- Bubbles -->
+    <circle
+        android:strokeColor="#A78BFA"
+        android:strokeWidth="1.5"
+        android:strokeAlpha="0.7"
+        android:fillColor="#00000000"
+        android:cx="14"
+        android:cy="32"
+        android:r="3.5" />
+    <circle
+        android:strokeColor="#A78BFA"
+        android:strokeWidth="1.2"
+        android:strokeAlpha="0.6"
+        android:fillColor="#00000000"
+        android:cx="20"
+        android:cy="22"
+        android:r="2.2" />
+    <circle
+        android:strokeColor="#C4B5FD"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.5"
+        android:fillColor="#00000000"
+        android:cx="10"
+        android:cy="20"
+        android:r="1.5" />
+
+    <!-- Sparkle top-right -->
+    <path
+        android:fillColor="#FF6B9D"
+        android:fillAlpha="0.85"
+        android:pathData="M80,20 L81.5,15 L83,20 L88,21.5 L83,23 L81.5,28 L80,23 L75,21.5 Z" />
+
+    <!-- Mini heart near tail -->
+    <path
+        android:fillColor="#FF6B9D"
+        android:pathData="M93,36 C93,34 91,32 89,34 C87,32 85,34 85,36 C85,39 89,43 89,43 C89,43 93,39 93,36Z" />
+
+</vector>

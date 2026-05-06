@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_lavender"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨ Cute Timer ✨"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_purple"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Status text -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set your timer! 🌸"
+            android:textSize="15sp"
+            android:textColor="@color/text_pink"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Mascot + Progress Ring Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            app:cardCornerRadius="110dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/card_white"
+            android:layout_marginBottom="20dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Circular progress ring -->
+                <ProgressBar
+                    android:id="@+id/progressRing"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:progressDrawable="@drawable/circular_progress"
+                    android:progress="0"
+                    android:rotation="-90"
+                    android:max="100" />
+
+                <!-- Mascot image -->
+                <ImageView
+                    android:id="@+id/ivMascot"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cute_mascot"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Cute mascot character" />
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ── COUNTDOWN DISPLAY (shown while running) ── -->
+        <LinearLayout
+            android:id="@+id/layoutCountdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/tvCountdownMins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="64sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_purple"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" : "
+                android:textSize="56sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_pink" />
+
+            <TextView
+                android:id="@+id/tvCountdownSecs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="64sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_purple"
+                android:fontFamily="monospace" />
+
+        </LinearLayout>
+
+        <!-- ── INPUT SECTION (shown when idle) ── -->
+        <LinearLayout
+            android:id="@+id/layoutInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <!-- Minutes & Seconds pickers -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <!-- Minutes column -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnMinutesUp"
+                        android:layout_width="56dp"
+                        android:layout_height="44dp"
+                        android:text="▲"
+                        android:textColor="@color/text_purple"
+                        android:backgroundTint="@color/btn_mint"
+                        app:cornerRadius="22dp"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvMinutes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textSize="52sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_purple"
+                        android:fontFamily="monospace"
+                        android:paddingHorizontal="8dp" />
+
+                    <Button
+                        android:id="@+id/btnMinutesDown"
+                        android:layout_width="56dp"
+                        android:layout_height="44dp"
+                        android:text="▼"
+                        android:textColor="@color/text_purple"
+                        android:backgroundTint="@color/btn_pink"
+                        app:cornerRadius="22dp"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="min"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_purple"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <!-- Separator -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" : "
+                    android:textSize="44sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_pink"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Seconds column -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/btnSecondsUp"
+                        android:layout_width="56dp"
+                        android:layout_height="44dp"
+                        android:text="▲"
+                        android:textColor="@color/text_purple"
+                        android:backgroundTint="@color/btn_mint"
+                        app:cornerRadius="22dp"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvSeconds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:textSize="52sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_purple"
+                        android:fontFamily="monospace"
+                        android:paddingHorizontal="8dp" />
+
+                    <Button
+                        android:id="@+id/btnSecondsDown"
+                        android:layout_width="56dp"
+                        android:layout_height="44dp"
+                        android:text="▼"
+                        android:textColor="@color/text_purple"
+                        android:backgroundTint="@color/btn_pink"
+                        app:cornerRadius="22dp"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="sec"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_purple"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Preset buttons row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btn1min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="1 min"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/preset_pink"
+                    app:cornerRadius="18dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:paddingHorizontal="12dp" />
+
+                <Button
+                    android:id="@+id/btn3min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="3 min"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/preset_purple"
+                    app:cornerRadius="18dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:paddingHorizontal="12dp" />
+
+                <Button
+                    android:id="@+id/btn5min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="5 min"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/preset_mint"
+                    app:cornerRadius="18dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:paddingHorizontal="12dp" />
+
+                <Button
+                    android:id="@+id/btn10min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="10 min"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/preset_yellow"
+                    app:cornerRadius="18dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:paddingHorizontal="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── ACTION BUTTONS ── -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="140dp"
+                android:layout_height="54dp"
+                android:text="▶  Start"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:backgroundTint="@color/btn_start"
+                app:cornerRadius="27dp"
+                android:elevation="4dp"
+                android:layout_marginHorizontal="8dp" />
+
+            <Button
+                android:id="@+id/btnPause"
+                android:layout_width="130dp"
+                android:layout_height="54dp"
+                android:text="⏸ Pause"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/btn_pause"
+                app:cornerRadius="27dp"
+                android:elevation="4dp"
+                android:visibility="gone"
+                android:layout_marginHorizontal="8dp" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:text="↺"
+                android:textSize="22sp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/btn_reset"
+                app:cornerRadius="27dp"
+                android:elevation="4dp"
+                android:visibility="gone"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌟 Made with love 🌟"
+            android:textSize="12sp"
+            android:textColor="@color/text_purple"
+            android:alpha="0.5"
+            android:layout_marginBottom="12dp" />
+
+    </LinearLayout>
+</ScrollView>
